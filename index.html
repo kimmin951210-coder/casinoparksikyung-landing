@@ -1,77 +1,135 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>바카라박시경</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>승부사 박시경</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
     body {
       margin: 0;
+      padding: 0;
       background: #000;
+    }
+
+    body {
       display: flex;
       justify-content: center;
     }
 
     .wrapper {
       position: relative;
-      width: 100%; /* ✅ 모바일 기본: 화면 꽉 */
-      margin: auto;
+      width: 100%;
+      max-width: 891px;
+      margin: 0 auto;
     }
 
-    /* ✅ PC: 화면 60% */
     @media (min-width: 900px) {
       .wrapper {
-        width: 60%;
+        width: 45%;
+        max-width: 720px;
       }
     }
 
-    /* ✅ PNG 원본 이미지 */
     .wrapper img {
-      width: 100%;
       display: block;
+      width: 100%;
+      height: auto;
     }
 
     /* 클릭 영역 공통 */
     .click-zone {
       position: absolute;
-      left: 5%;
-      width: 90%;
-      height: 15%;
+      left: 4.8%;
+      width: 90.4%;
+      display: block;
       cursor: pointer;
+      z-index: 10;
+
+      /* 위치 확인용 */
+      background: rgba(255, 0, 0, 0.18);
+      border: 3px solid red;
     }
 
-    /* ✅ 각각 위치 조정 */
-    .zone-live { top: 47.2%; }
-    .zone-talk { top: 64%; }
-    .zone-tele { top: 80.9%; }
+    /* 1. 생방송 공지방 */
+    .zone1 {
+      top: 58.8%;
+      height: 8.6%;
+    }
 
-    /* 클릭 시 살짝 효과 */
-    .click-zone:hover { opacity: 0.98; }
+    /* 2. 카카오톡 문의 */
+    .zone2 {
+      top: 68.2%;
+      height: 8.6%;
+    }
 
+    /* 3. 텔레그램 문의 */
+    .zone3 {
+      top: 77.6%;
+      height: 8.6%;
+    }
+
+    /* 4. 승부사 박시경 가족방 */
+    .zone4 {
+      top: 87.0%;
+      height: 8.6%;
+    }
   </style>
 </head>
 
 <body>
+
   <div class="wrapper">
 
-    <img src="landing.png" alt="바카라박시경 랜딩">
+    <!-- 랜딩 이미지 -->
+    <img
+      src="./landing.png"
+      alt="승부사 박시경 랜딩페이지"
+    />
 
-    <a href="https://open.kakao.com/o/gncqMx0h"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="click-zone zone-live"></a>
+    <!-- 1. 생방송 공지방 -->
+    <a
+      class="click-zone zone1"
+      href="https://xn--vv4b54ovoe.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="생방송 공지방">
+    </a>
 
-    <a href="https://open.kakao.com/o/s1q0v8Ag"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="click-zone zone-talk"></a>
+    <!-- 2. 카카오톡 문의 -->
+    <a
+      class="click-zone zone2"
+      href="https://open.kakao.com/o/s1q0v8Ag"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="카카오톡 문의">
+    </a>
 
-    <a href="https://telegram.me/storyinquiry"
-       target="_blank"
-       rel="noopener noreferrer"
-       class="click-zone zone-tele"></a>
+    <!-- 3. 텔레그램 문의 -->
+    <a
+      class="click-zone zone3"
+      href="https://telegram.me/storyinquiry"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="텔레그램 문의">
+    </a>
+
+    <!-- 4. 승부사 박시경 가족방 -->
+    <a
+      class="click-zone zone4"
+      href="https://open.kakao.com/o/gJqGHqLi"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="승부사 박시경 가족방">
+    </a>
 
   </div>
+
 </body>
 </html>
